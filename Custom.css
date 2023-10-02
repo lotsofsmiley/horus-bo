@@ -8,3 +8,7 @@
     --fontColor: #fff;
     --darkFontColor: var(--lightBackgroundColor);
 }
+
+.mainBackground {
+    background-color: var(--lightBackgroundColor);
+}
