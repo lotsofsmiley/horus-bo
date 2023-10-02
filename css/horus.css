@@ -1,14 +1,14 @@
 :root{
-    --lightBackgroundColor: #232323;
-    --darkBackgroundColor: #191919;
-    --lightButtonColor: #BABABA;
-    --darkButtonColor: #353535;
-    --contrastColor: #B4891C;
-    --buttonSelected: #8B6D21;
-    --fontColor: #fff;
-    --darkFontColor: var(--lightBackgroundColor);
+    --light-background-color: #232323;
+    --dark-background-color: #191919;
+    --light-button-color: #BABABA;
+    --dark-button-color: #353535;
+    --contrast-color: #B4891C;
+    --button-selected: #8B6D21;
+    --font-color: #fff;
+    --dark-font-color: var(--light-background-color);
 }
 
-.mainBackground {
-    background-color: var(--lightBackgroundColor);
+.main-background {
+    background-color: var(--light-background-color);
 }
