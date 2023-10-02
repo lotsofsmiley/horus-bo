@@ -1,0 +1,10 @@
+:root{
+    --lightBackgroundColor: #232323;
+    --darkBackgroundColor: #191919;
+    --lightButtonColor: #BABABA;
+    --darkButtonColor: #353535;
+    --contrastColor: #B4891C;
+    --buttonSelected: #8B6D21;
+    --fontColor: #fff;
+    --darkFontColor: var(--lightBackgroundColor);
+}
