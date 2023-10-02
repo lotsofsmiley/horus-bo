@@ -53,12 +53,13 @@
 .login-logo {
     max-width: 200px;
     margin-bottom: 20px;
-    margin-top: 60px;
+    margin-top: 40px;
     width: 100px;
 }
 
 .login-text {
     color: var(--font-color);
+    margin-top: 20px;
     margin-bottom: 30px;
     font-size: 200%;
     font-weight: bolder;
