@@ -1,14 +1,62 @@
 :root{
     --light-background-color: #232323;
     --dark-background-color: #191919;
-    --light-button-color: #BABABA;
+    --light-button-color: #353535;
     --dark-button-color: #353535;
     --contrast-color: #B4891C;
     --button-selected: #8B6D21;
     --font-color: #fff;
-    --dark-font-color: var(--light-background-color);
+    --dark-font-color: #8C8C8C;
+
+    --normal-font: 26px;
+    --tiny-font: 24px;
+
+    font-family: 'Century Gothic', sans-serif;
 }
 
-.main-background {
+* {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+}
+
+.content {
+    height: 100vh;
     background-color: var(--light-background-color);
+    color: var(--font-color);
+    overflow: hidden;
+}
+
+.side-bar {
+    width: 22%;
+    height: 100%;
+    padding: 1.5rem;
+    background-color: var(--dark-background-color);
+}
+
+.side-bar-title {
+    color: var(--dark-font-color);
+    font-size: var(--tiny-font);
+}
+
+
+.side-bar-button {
+    width: auto;
+    height: 2rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    padding: 1.5rem 1rem;
+    background-color: var(--light-button-color);
+    color: var(--font-color);
+    font-size: var(--normal-font);
+}
+.side-bar-button-options {
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.side-bar-logout-button {
+    margin-top: auto;
 }
