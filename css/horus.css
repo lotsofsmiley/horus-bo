@@ -77,9 +77,9 @@ body{
     font-weight: bolder;
     width: 70%;
 }
+
 .login-text {
     color: var(--font-color);
-    overflow: hidden;
 }
 
 .login-small-text {
@@ -189,7 +189,7 @@ body{
     width: 0;
     height: 100%;
     overflow-x: hidden;
-    transition: 0.5s; /* Adjust the transition duration as needed */
+    transition: 0.5s;
     background-color: var(--dark-background-color);
     position: absolute;
     top: 0;
@@ -197,14 +197,12 @@ body{
     z-index: 3;
 }
 
-/* Adjust the styles for the collapsed sidebar content as needed */
 .sidebar-collapse p {
     color: white;
     padding: 10px;
     text-align: center;
 }
 
-/* Hide the scrollbar for the collapsed sidebar */
 .sidebar-collapse::-webkit-scrollbar {
     display: none;
 }

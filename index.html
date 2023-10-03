@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="sidebar-collapse" id="addUsersSidebar">
+        <div class="sidebar-collapse" id="usersSidebar">
             <!-- Content for Add Users sidebar -->
         </div>
         <div class="sidebar-collapse" id="departmentsSidebar">
@@ -44,8 +44,8 @@
 
     </section>
     <script>
-        document.getElementById("userButton").addEventListener("click", function () {
-                toggleSidebar("addUsersSidebar");
+            document.getElementById("userButton").addEventListener("click", function () {
+                toggleSidebar("usersSidebar");
             });
 
             document.getElementById("departmentsButton").addEventListener("click", function () {
@@ -59,7 +59,7 @@
             function toggleSidebar(sidebarId) {
                 var sidebar = document.getElementById(sidebarId);
                 if (sidebar.style.width === "0px" || !sidebar.style.width) {
-                    sidebar.style.width = "30%";
+                    sidebar.style.width = "37%";
                 } else {
                     sidebar.style.width = "0px";
                 }
