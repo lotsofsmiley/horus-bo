@@ -5,35 +5,66 @@
     <title>Settings</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/horus.css">
+    <!--<script type="text/javascript" src="/js/horus.js"></script>-->
 </head>
 
 <body>
     <section class="content">
 
-        <div class="side-bar">
-            <div class="side-bar-title"> 
+        <div class="sidebar">
+            <div class="sidebar-title"> 
                 <p>
                     Setting
                 </p>
             </div>
-            <div class="side-bar-button-options">
-                <div class="side-bar-button">
-                    Add Users
+            <div class="sidebar-button-options">
+                <div class="sidebar-button" id="userButton">
+                    User managment
                 </div>
-                <div class="side-bar-button">
+                <div class="sidebar-button" id="departmentsButton">
                     Departments
                 </div>
-                <div class="side-bar-button">
+                <div class="sidebar-button" id="autoTaskButton">
                     Auto Task
                 </div>
-                <div class="side-bar-button side-bar-logout-button">
+                <div class="sidebar-button sidebar-logout-button">
                     Log out
                 </div>
             </div>
-            
+        </div>
+        <div class="sidebar-collapse" id="addUsersSidebar">
+            <!-- Content for Add Users sidebar -->
+        </div>
+        <div class="sidebar-collapse" id="departmentsSidebar">
+            <!-- Content for Departments sidebar -->
+        </div>
+        <div class="sidebar-collapse" id="autoTaskSidebar">
+            <!-- Content for Auto Task sidebar -->
         </div>
 
     </section>
+    <script>
+        document.getElementById("userButton").addEventListener("click", function () {
+                toggleSidebar("addUsersSidebar");
+            });
+
+            document.getElementById("departmentsButton").addEventListener("click", function () {
+                toggleSidebar("departmentsSidebar");
+            });
+
+            document.getElementById("autoTaskButton").addEventListener("click", function () {
+                toggleSidebar("autoTaskSidebar");
+            });
+
+            function toggleSidebar(sidebarId) {
+                var sidebar = document.getElementById(sidebarId);
+                if (sidebar.style.width === "0px" || !sidebar.style.width) {
+                    sidebar.style.width = "30%";
+                } else {
+                    sidebar.style.width = "0px";
+                }
+            }
+    </script>
 </body>
 
 </html>

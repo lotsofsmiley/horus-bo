@@ -11,18 +11,30 @@
     --normal-font: 26px;
     --tiny-font: 24px;
 
+    --login-big-font: 32px;
+    --login-tiny-font: 20px;
+    --login-font: 24px;
+
     font-family: 'Century Gothic', sans-serif;
+
 }
 
 * {
     padding: 0;
     margin: 0;
     font-weight: 400;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.010);
 }
 
-.content {
-    height: 100vh;
-    background-color: var(--light-background-color);
+body{
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: unset;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    font-smooth: always;
 }
 
 /* login */
@@ -61,7 +73,7 @@
     color: var(--font-color);
     margin-top: 20px;
     margin-bottom: 30px;
-    font-size: 200%;
+    font-size: var(--login-big-font);
     font-weight: bolder;
     width: 70%;
 }
@@ -71,8 +83,8 @@
 }
 
 .login-small-text {
-    color: #f1f1f1b2;
-    font-size: 100%;
+    color: var(--font-color);
+    font-size: var(--login-tiny-font);
     text-align: left;
     width: 71%;
     line-height: 24px;
@@ -82,39 +94,44 @@
 .login-input {
     height: 40px;
     width: 67%;
-    padding: 10px 15px;
-    margin-bottom: 15px;
+    padding: 5px 15px;
+    margin: 15px 0 15px 0;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
-    background-color: #313131;
+    font-size: var(--login-tiny-font);
+    background-color: var(--light-button-color);
+    color: var(--dark-font-color);
+}
+
+.login-input:focus {
+    outline: none;
 }
 
 .login-input::placeholder {
-    color: #f1f1f1b2;
+    color: var(--dark-font-color);
     opacity: 0.8;
-    font-size: 14px;
-    font-family: 'Mulish', sans-serif;
+    font-size: var(--login-tiny-font);
+    font-family: 'Century Gothic';
 }
 
-.remember-me {
-    color: #f1f1f1;
+.login-remember-me {
+    color: var(--dark-font-color);
     text-align: left;
+    font-size: 1.115rem;
     width: 73%;
 }
 
 .login-button {
     background-color: var(--contrast-color);
     color: var(--dark-background-color);
-    padding: 10px 30px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 2px;
-    font-size: 16px;
+    border-radius: 4px;
+    font-size: var(--login-font);
     cursor: pointer;
     width: 72%;
     margin-top: 40px;
     margin-bottom: 60px;
-    font-size: large;
 }
 
 .login-button:hover {
@@ -124,19 +141,25 @@
 
 /* main page */
 
-.side-bar {
-    width: 22%;
-    height: 100%;
-    padding: 1.5rem;
-    background-color: var(--dark-background-color);
+.content {
+    height: 100vh;
+    background-color: var(--light-background-color);
 }
 
-.side-bar-title {
+.sidebar {
+    width: 18%;
+    height: calc(100% - 3rem);
+    padding: 1.5rem;
+    background-color: var(--dark-background-color);
+    z-index: 1;
+}
+
+.sidebar-title {
     color: var(--dark-font-color);
     font-size: var(--tiny-font);
 }
 
-.side-bar-button {
+.sidebar-button {
     width: auto;
     height: 2rem;
     border-radius: 4px;
@@ -146,13 +169,42 @@
     color: var(--font-color);
     font-size: var(--normal-font);
 }
-.side-bar-button-options {
-    height: 92%;
+
+.sidebar-button:hover {
+    background-color: var(--button-selected);
+}
+
+.sidebar-button-options {
+    height: calc(100% - 2rem);
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
 }
 
-.side-bar-logout-button {
+.sidebar-logout-button {
     margin-top: auto;
+}
+
+.sidebar-collapse {
+    width: 0;
+    height: 100%;
+    overflow-x: hidden;
+    transition: 0.5s; /* Adjust the transition duration as needed */
+    background-color: var(--dark-background-color);
+    position: absolute;
+    top: 0;
+    left: calc(18% + 3.5rem);
+    z-index: 3;
+}
+
+/* Adjust the styles for the collapsed sidebar content as needed */
+.sidebar-collapse p {
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Hide the scrollbar for the collapsed sidebar */
+.sidebar-collapse::-webkit-scrollbar {
+    display: none;
 }
