@@ -37,7 +37,7 @@ body{
     font-smooth: always;
 }
 
-/* login */
+/***************************************************** login *****************************************************/
 
 .login-body {
     margin: 0;
@@ -139,7 +139,9 @@ body{
     color: var(--dark-background-color);
 }
 
-/* main page */
+/***************************************************** main page *****************************************************/
+
+/******************************************** main sidebar *******************************************/
 
 .content {
     height: 100vh;
@@ -157,6 +159,7 @@ body{
 .sidebar-title {
     color: var(--dark-font-color);
     font-size: var(--tiny-font);
+    margin-bottom: 1rem;
 }
 
 .sidebar-button {
@@ -164,7 +167,7 @@ body{
     height: 2rem;
     border-radius: 4px;
     margin: 0.5rem 0;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1.5rem;
     background-color: var(--light-button-color);
     color: var(--font-color);
     font-size: var(--normal-font);
@@ -178,14 +181,19 @@ body{
     height: calc(100% - 2rem);
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
 }
 
 .sidebar-logout-button {
     margin-top: auto;
 }
 
-.sidebar-collapse {
+.sidebar-button.selected {
+    background-color: var(--button-selected);
+}
+
+/***************************************** collapsed sidebar ****************************************/
+
+.sidebar-collapsed1 {
     width: 0;
     height: 100%;
     overflow-x: hidden;
@@ -197,12 +205,70 @@ body{
     z-index: 3;
 }
 
-.sidebar-collapse p {
+.sidebar-collapsed1-transition{
+    transition: 0.55s;
+    height: inherit;
+}
+
+.sidebar-collapsed1-content {
+    height: calc(100% - 6rem);
+    width: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-collapsed1-title {
+    color: var(--dark-font-color);
+    font-size: var(--tiny-font);
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.sidebar-collapsed1 p {
     color: white;
     padding: 10px;
     text-align: center;
 }
 
-.sidebar-collapse::-webkit-scrollbar {
+.sidebar-collapsed1::-webkit-scrollbar {
     display: none;
 }
+
+.sidebar-collapsed1-button {
+    background-color: var(--contrast-color);
+    color: var(--dark-background-color);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: var(--login-font);
+    cursor: pointer;
+    width: 72%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.sidebar-collapsed1-button-contrast {
+    background-color: var(--contrast-color);
+    color: var(--dark-background-color);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: var(--normal-font);
+    cursor: pointer;
+    width: auto;
+    margin-top: auto;
+    text-align: center;
+}
+
+/***************************************** users ****************************************/
+
+.sidebar-collapsed1-row {
+    width: auto;
+    height: 2rem;
+}
+
+
+/************************************* departments **************************************/
+
+
+/***************************************** tasks ****************************************/

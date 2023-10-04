@@ -5,7 +5,6 @@
     <title>Settings</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/horus.css">
-    <!--<script type="text/javascript" src="/js/horus.js"></script>-->
 </head>
 
 <body>
@@ -13,12 +12,10 @@
 
         <div class="sidebar">
             <div class="sidebar-title"> 
-                <p>
                     Setting
-                </p>
             </div>
             <div class="sidebar-button-options">
-                <div class="sidebar-button" id="userButton">
+                <div class="sidebar-button" id="addUsersButton">
                     User managment
                 </div>
                 <div class="sidebar-button" id="departmentsButton">
@@ -32,39 +29,33 @@
                 </div>
             </div>
         </div>
-        <div class="sidebar-collapse" id="usersSidebar">
-            <!-- Content for Add Users sidebar -->
+        <div class="sidebar-collapsed1" id="addUsersSidebar">
+            <div class="sidebar-collapsed1-transition">
+                <div class="sidebar-collapsed1-title">
+                    Time
+                </div>
+                <div class="sidebar-collapsed1-content">
+                    <div class="sidebar-collapsed1-row">
+                
+                    </div>
+                    <div class="sidebar-collapsed1-button-contrast">
+                        Add User
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="sidebar-collapse" id="departmentsSidebar">
-            <!-- Content for Departments sidebar -->
+        <div class="sidebar-collapsed1" id="departmentsSidebar">
+            <div class="sidebar-collapse1-content">
+            
+            </div>
         </div>
-        <div class="sidebar-collapse" id="autoTaskSidebar">
-            <!-- Content for Auto Task sidebar -->
+        <div class="sidebar-collapsed1" id="autoTaskSidebar">
+            <div class="sidebar-collapse1-content">
+            
+            </div>
         </div>
-
+        <script src="/js/horus.js"></script>
     </section>
-    <script>
-            document.getElementById("userButton").addEventListener("click", function () {
-                toggleSidebar("usersSidebar");
-            });
-
-            document.getElementById("departmentsButton").addEventListener("click", function () {
-                toggleSidebar("departmentsSidebar");
-            });
-
-            document.getElementById("autoTaskButton").addEventListener("click", function () {
-                toggleSidebar("autoTaskSidebar");
-            });
-
-            function toggleSidebar(sidebarId) {
-                var sidebar = document.getElementById(sidebarId);
-                if (sidebar.style.width === "0px" || !sidebar.style.width) {
-                    sidebar.style.width = "37%";
-                } else {
-                    sidebar.style.width = "0px";
-                }
-            }
-    </script>
 </body>
 
 </html>
