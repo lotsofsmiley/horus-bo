@@ -207,6 +207,7 @@ body{
 }
 
 .sidebar-collapsed1-transition{
+    transition: 0.55s;
     height: inherit;
 }
 
@@ -234,6 +235,10 @@ body{
     display: none;
 }
 
+.sidebar-collapsed1-button-container{
+    margin-top: auto;
+}
+
 .sidebar-collapsed1-button {
     background-color: var(--contrast-color);
     color: var(--dark-background-color);
@@ -256,18 +261,8 @@ body{
     font-size: var(--normal-font);
     cursor: pointer;
     width: auto;
-    margin-top: auto;
+    margin-top: 1rem;
     text-align: center;
-}
-
-.sidebar-collapsed1-transition {
-    transition: opacity 0.3s ease-in-out;
-    /* Add a smooth opacity transition */
-}
-
-.sidebar-collapsed1-transition.hidden {
-    opacity: 0;
-    /* Initially hide the content */
 }
 
 /***************************************** users ****************************************/
@@ -382,6 +377,30 @@ body{
 
 
 /***************************************** tasks ****************************************/
+
+#selectedTask {
+    display: none; /* Add this line to hide it initially */
+}
+
+.tasks-hidden-button {
+    background-color: var(--dark-background-color);
+    color: var(--font-color);
+    padding: 15px 30px;
+    border: 2px solid var(--light-background-color);
+    border-radius: 5px;
+    font-size: var(--tinier-font);
+    cursor: pointer;
+    width: auto;
+    margin-top: 1rem;
+    text-align: center;
+    box-shadow: 10px 10px 30px rgba(10, 10, 10, 0.8);
+}
+
+.tasks-hidden-button-small{
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
 
 .tasks-sidebar-button {
     width: auto;
