@@ -10,6 +10,7 @@
 
     --normal-font: 26px;
     --tiny-font: 24px;
+    --tinier-font: 22px;
 
     --login-big-font: 32px;
     --login-tiny-font: 20px;
@@ -30,7 +31,6 @@ body{
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: unset;
     -moz-osx-font-smoothing: grayscale;
-    font-smooth: antialiased;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -265,11 +265,27 @@ body{
 
 .sidebar-collapsed1-row {
     width: auto;
-    height: 2rem;
+    height: auto;
 }
 
 
 /************************************* departments **************************************/
 
+.departments-sidebar-button {
+    width: auto;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    padding: 0.70rem 1.5rem;
+    background-color: var(--light-button-color);
+    color: var(--font-color);
+    font-size: var(--tinier-font);
+    
+}
+
+.departments-sidebar-button:hover {
+    background-color: var(--button-selected);
+}
 
 /***************************************** tasks ****************************************/
