@@ -86,3 +86,71 @@ function getButtonId(sidebarId) {
     }
 }
 
+
+// TASKS PART
+
+// JavaScript
+var openSidebarId = null; // Variable to track the currently open sidebar
+var openTask = null; // Variable to track the currently open task row
+
+// Add event listeners to the task buttons
+var taskButtons = document.querySelectorAll(".task-button");
+taskButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        var taskName = button.getAttribute("data-task");
+        toggleTask(taskName);
+    });
+});
+
+document.getElementById("tasksButton").addEventListener("click", function () {
+    toggleSidebar("tasksSidebar", "tasksButton");
+});
+
+function toggleTask(taskName) {
+    if (openTask === taskName) {
+        // If the clicked task is already open, close it instantly
+        closeTask(taskName, true);
+        openTask = null;
+    } else {
+        // Close the currently open task (if any) instantly
+        if (openTask) {
+            closeTask(openTask, true);
+        }
+
+        // Hide all the task buttons
+        hideAllTaskButtons();
+
+        // Open the clicked task with a transition
+        openTaskRow(taskName);
+        openTask = taskName;
+    }
+}
+
+function hideAllTaskButtons() {
+    taskButtons.forEach(function (button) {
+        button.style.display = "none";
+    });
+}
+
+function openTaskRow(taskName) {
+    var taskRow = document.querySelector(".task-row[data-task='" + taskName + "']");
+    taskRow.style.display = "block";
+}
+
+function closeTask(taskName, instant = false) {
+    var taskRow = document.querySelector(".task-row[data-task='" + taskName + "']");
+
+    if (instant) {
+        // Close instantly without transition
+        taskRow.style.transition = "none";
+        taskRow.style.display = "none";
+        setTimeout(function () {
+            taskRow.style.transition = ""; // Reset transition
+        }, 0);
+    } else {
+        // Close with the transition
+        taskRow.style.display = "none";
+    }
+}
+
+

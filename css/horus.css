@@ -280,7 +280,11 @@ body{
 
 /************************************* departments **************************************/
 
-.departments-sidebar-button {
+
+
+/***************************************** tasks ****************************************/
+
+.tasks-sidebar-button {
     width: auto;
     height: 2rem;
     line-height: 2rem;
@@ -293,8 +297,10 @@ body{
     
 }
 
-.departments-sidebar-button:hover {
+.tasks-sidebar-button:hover {
     background-color: var(--button-selected);
 }
 
-/***************************************** tasks ****************************************/
+.task-row {
+    display: none;
+}
