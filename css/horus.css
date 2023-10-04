@@ -30,7 +30,7 @@ body{
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: unset;
     -moz-osx-font-smoothing: grayscale;
-    font-smoothing: antialiased;
+    font-smooth: antialiased;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -67,6 +67,7 @@ body{
     margin-bottom: 20px;
     margin-top: 40px;
     width: 100px;
+    box-shadow: 10px 10px 40px rgba(10, 10, 10, 0.5);
 }
 
 .login-text {
