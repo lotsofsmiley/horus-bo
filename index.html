@@ -36,12 +36,71 @@
                     Time
                 </div>
                 <div class="sidebar-collapsed1-content">
-                    <div class="sidebar-collapsed1-row">
-                        
+                    <div class="sidebar-collapsed1-row-user">
+                        <div class="user">
+                            <div class="user-icon">
+                                <img src="/media/user-icon-test.png" alt="Icon" class="user-icon-image">
+                            </div>
+                            <div class="user-info">
+                                <div class="user-name">
+                                    Cristiano Freitas
+                                </div>
+                                <div class="user-email">
+                                    cristianofreitas@outlook.pt
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-actions">
+                            <div class="user-edit-button">
+                                Edit
+                            </div>
+                            <div class="user-active" onclick="openModal('off')">
+                                off >
+                            </div>
+                        </div>
                     </div>
+                    <div class="sidebar-collapsed1-row-user">
+                        <div class="user">
+                            <div class="user-icon">
+                                <img src="/media/user-icon-test.png" alt="Icon" class="user-icon-image">
+                            </div>
+                            <div class="user-info">
+                                <div class="user-name">
+                                    Cristiano Freitas
+                                </div>
+                                <div class="user-email">
+                                    cristianofreitas@outlook.pt
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-actions">
+                            <div class="user-edit-button">
+                                Edit
+                            </div>
+                            <div class="user-active" onclick="openModal('on')">
+                                on >
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="sidebar-collapsed1-button-contrast">
                         Add User
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- USER ACTIVE/DEACTIVE MODAL -->
+        <div id="myModal" class="user-modal">
+            <div class="user-modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="user-modal-message">
+                    This is a message box that appears on top of everything.
+                </div>
+                <hr>
+                <div class="user-modal-buttons">
+                    <button onclick="userCloseModal()">Cancel</button>
+                    <button onclick="userAcceptAction()">Accept</button>
                 </div>
             </div>
         </div>

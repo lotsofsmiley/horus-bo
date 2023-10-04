@@ -34,7 +34,6 @@ function openSidebar(sidebarId, buttonId) {
     var sidebar = document.getElementById(sidebarId);
     var content = sidebar.querySelector(".sidebar-collapsed1-transition"); // Get the content element
 
-    // Hide the content initially
     content.style.display = "none";
 
     sidebar.style.width = "32%";
@@ -86,14 +85,46 @@ function getButtonId(sidebarId) {
     }
 }
 
+// USERS PART
+
+function showMessageBox() {
+    var messageBox = document.querySelector(".message-box");
+    messageBox.style.display = "block";
+}
+
+// Function to open the modal
+function openModal(message) {
+    var modal = document.getElementById("myModal");
+    var modalMessage = document.querySelector(".user-modal-message");
+
+    // Set the message content based on the parameter
+    if (message === 'on') {
+        modalMessage.textContent = 'on';
+    } else if (message === 'off') {
+        modalMessage.textContent = 'off';
+    }
+
+    modal.style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+// Function to handle the "Accept" button action
+function acceptAction() {
+    alert("Accept button clicked!");
+    closeModal();
+}
+
 
 // TASKS PART
 
-// JavaScript
 var openSidebarId = null; // Variable to track the currently open sidebar
 var openTask = null; // Variable to track the currently open task row
 
-// Add event listeners to the task buttons
 var taskButtons = document.querySelectorAll(".task-button");
 taskButtons.forEach(function (button) {
     button.addEventListener("click", function () {
