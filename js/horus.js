@@ -91,14 +91,14 @@ function getButtonId(sidebarId) {
 
 // JavaScript
 var openSidebarId = null; // Variable to track the currently open sidebar
-var openTask = null; // Variable to track the currently open task row
+var openTaskIndex = null; // Variable to track the currently open task row index
+var selectedTask = document.getElementById("selectedTask");
 
 // Add event listeners to the task buttons
 var taskButtons = document.querySelectorAll(".task-button");
-taskButtons.forEach(function (button) {
+taskButtons.forEach(function (button, index) {
     button.addEventListener("click", function () {
-        var taskName = button.getAttribute("data-task");
-        toggleTask(taskName);
+        toggleTask(index, button.textContent);
     });
 });
 
@@ -106,23 +106,27 @@ document.getElementById("tasksButton").addEventListener("click", function () {
     toggleSidebar("tasksSidebar", "tasksButton");
 });
 
-function toggleTask(taskName) {
-    if (openTask === taskName) {
+function toggleTask(taskIndex, buttonText) {
+    if (openTaskIndex === taskIndex) {
         // If the clicked task is already open, close it instantly
-        closeTask(taskName, true);
-        openTask = null;
+        closeTask(taskIndex, true);
+        openTaskIndex = null;
     } else {
         // Close the currently open task (if any) instantly
-        if (openTask) {
-            closeTask(openTask, true);
+        if (openTaskIndex !== null) {
+            closeTask(openTaskIndex, true);
         }
 
         // Hide all the task buttons
         hideAllTaskButtons();
 
-        // Open the clicked task with a transition
-        openTaskRow(taskName);
-        openTask = taskName;
+        // Show the clicked task row
+        openTaskRow(taskIndex);
+
+        // Update the selected task text
+        updateSelectedTask(buttonText);
+
+        openTaskIndex = taskIndex;
     }
 }
 
@@ -132,19 +136,26 @@ function hideAllTaskButtons() {
     });
 }
 
-function openTaskRow(taskName) {
-    var taskRow = document.querySelector(".task-row[data-task='" + taskName + "']");
-    taskRow.style.display = "block";
+function openTaskRow(taskIndex) {
+    var taskRows = document.querySelectorAll(".task-row");
+    taskRows[taskIndex].style.display = "block";
 }
 
-function closeTask(taskName, instant = false) {
-    var taskRow = document.querySelector(".task-row[data-task='" + taskName + "']");
+function updateSelectedTask(taskText) {
+    var selectedTaskSmall = document.querySelector("#selectedTask .tasks-hidden-button-small");
+    selectedTaskSmall.textContent = taskText;
+    selectedTask.style.display = "block"; // Show the selected task
+}
+
+function closeTask(taskIndex, instant = false) {
+    var taskRows = document.querySelectorAll(".task-row");
+    var taskRow = taskRows[taskIndex];
 
     if (instant) {
         // Close instantly without transition
         taskRow.style.transition = "none";
-        taskRow.style.display = "none";
         setTimeout(function () {
+            taskRow.style.display = "none";
             taskRow.style.transition = ""; // Reset transition
         }, 0);
     } else {
