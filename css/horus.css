@@ -207,7 +207,6 @@ body{
 }
 
 .sidebar-collapsed1-transition{
-    transition: 0.55s;
     height: inherit;
 }
 
@@ -259,6 +258,16 @@ body{
     width: auto;
     margin-top: auto;
     text-align: center;
+}
+
+.sidebar-collapsed1-transition {
+    transition: opacity 0.3s ease-in-out;
+    /* Add a smooth opacity transition */
+}
+
+.sidebar-collapsed1-transition.hidden {
+    opacity: 0;
+    /* Initially hide the content */
 }
 
 /***************************************** users ****************************************/

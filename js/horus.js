@@ -32,26 +32,39 @@ function toggleSidebar(sidebarId, buttonId) {
 
 function openSidebar(sidebarId, buttonId) {
     var sidebar = document.getElementById(sidebarId);
+    var content = sidebar.querySelector(".sidebar-collapsed1-transition"); // Get the content element
+
+    // Hide the content initially
+    content.style.display = "none";
+
     sidebar.style.width = "32%";
 
     // Select the button
     var selectedButton = document.getElementById(buttonId);
     selectedButton.classList.add("selected");
+
+    // Use setTimeout to show the content after the sidebar transition
+    setTimeout(function () {
+        content.style.display = "block";
+    }, 500); // 300ms is the duration of the CSS transition
 }
 
 function closeSidebar(sidebarId, buttonId, instant = false) {
     var sidebar = document.getElementById(sidebarId);
+    var content = sidebar.querySelector(".sidebar-collapsed1-transition");
 
     if (instant) {
         // Close instantly without transition
         sidebar.style.transition = "none";
         sidebar.style.width = "0px";
+        content.style.display = "none";
         setTimeout(function () {
             sidebar.style.transition = ""; // Reset transition
         }, 0);
     } else {
         // Close with the transition
         sidebar.style.width = "0px";
+        content.style.display = "none";
     }
 
     // Unselect the button
