@@ -36,7 +36,7 @@ function openSidebar(sidebarId, buttonId) {
 
     content.style.display = "none";
 
-    sidebar.style.width = "32%";
+    sidebar.style.width = "35%";
 
     // Select the button
     var selectedButton = document.getElementById(buttonId);

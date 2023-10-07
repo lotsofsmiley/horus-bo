@@ -8,9 +8,9 @@
     --font-color: #fff;
     --dark-font-color: #8C8C8C;
 
-    --normal-font: 26px;
-    --tiny-font: 24px;
-    --tinier-font: 20px;
+    --normal-font: 22px;
+    --tiny-font: 20px;
+    --tinier-font: 18px;
 
     --login-big-font: 32px;
     --login-tiny-font: 20px;
@@ -168,10 +168,11 @@ body{
     height: 2rem;
     border-radius: 4px;
     margin: 0.5rem 0;
-    padding: 1.5rem 1.5rem;
+    padding: 1rem 1rem;
     background-color: var(--dark-button-color);
     color: var(--font-color);
     font-size: var(--normal-font);
+    line-height: 2rem;
 }
 
 .sidebar-button:hover {
